@@ -1,19 +1,17 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package projectcpuemu;
 
+import projectcpuemu.gui.MainWindow;
+
 /**
- *
+ * <p>Main Driver for CPUEmu.  Acts as an initializer for the GUI.</p>
  * @author antoniomalvagomes
  */
 public class ProjectCPUEmu {
 
     /**
-     * @param args the command line arguments
+     * @param args the command line arguments [none]
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        MainWindow main = new MainWindow();
     }
 }
