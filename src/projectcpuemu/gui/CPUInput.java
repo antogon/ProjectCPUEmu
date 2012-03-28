@@ -8,11 +8,12 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.border.Border;
+import javax.swing.border.BevelBorder;
 
 /**
  *
@@ -26,6 +27,7 @@ public class CPUInput extends JPanel {
     {
         super();
         this.setSize(width, height);
+        this.setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));
         this.setBackground(Color.decode("0xDDDDDD"));
         this.setLayout(new BorderLayout());
         JPanel buttonContainer = new JPanel();
