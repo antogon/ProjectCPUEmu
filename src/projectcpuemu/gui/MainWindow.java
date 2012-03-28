@@ -1,9 +1,8 @@
 package projectcpuemu.gui;
 
-import java.awt.Color;
-import java.awt.Dimension;
+import java.awt.BorderLayout;
+import java.awt.Container;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 /**
  * <p>Represents the main container for the views of this application.</p>
@@ -14,19 +13,16 @@ public class MainWindow extends JFrame {
     public MainWindow()
     {
         super();
-        JPanel mainContainer = new JPanel();
-        JPanel canvasContainer = new JPanel();
-        JPanel inputContainer = new JPanel();
-        canvasContainer.setSize(399, 580);
-        inputContainer.setSize(399, 580);
-        canvasContainer.setBackground(Color.decode("0xDDDDDD"));
-        inputContainer.setBackground(Color.decode("0xFFFFFF"));
-        mainContainer.add(canvasContainer);
-        mainContainer.add(inputContainer);
-        this.setContentPane(mainContainer);
+        this.setTitle("CPU Emulator");
         this.setLocation(400, 400);
         this.setSize(800, 600);
         this.setResizable(false);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setLayout(new BorderLayout());
+        Container mainContainer = this.getContentPane();
+        mainContainer.setSize(this.getWidth(),this.getHeight());
+        mainContainer.add(new CPUCanvas(this.getWidth()/4 * 3,this.getHeight()));
+        mainContainer.add(new CPUInput(this.getWidth()/4,this.getHeight()), BorderLayout.EAST);
         this.setVisible(true);
     }
 }
